@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='../scripts/w3.js'></script>
+</head>
+<body>
+
+<button onclick="document.getElementById('demo').innerHTML=Date()">Time1</button>
+<button onclick="this.innerHTML=Date()">Time2</button> <!-- element calling will change, use this -->
+<button onclick="displayDate()">Time3</button>
+
+<p id="demo"></p>
+<button id="time4" onmouseover="highlight()" onmouseout="unHighlight()">Time4</button>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<div id="points">
+</div>
+
+<script>
+    var cars = ['BMW', 'Mercedes', 'Toyota', 'Ford', 'Tesla'];
+
+    var str = '<ul>';
+
+    for(var i in cars){
+        str += '<li>';
+        str += cars[i];
+        str+= '</li>';
+    }
+    str += '</ul>'
+
+    document.getElementById('points').innerHTML = str;
+</script>
+
+</body>
+</html>

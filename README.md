@@ -1,1 +1,2 @@
-# jsPractice2
+# jsPractice
+JavaScript Practice
