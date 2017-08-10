@@ -17,6 +17,10 @@
 <div id="points">
 </div>
 
+<p id="break"></p>
+<div id="error"></div>
+<div id="json"></div>
+
 <script>
     var cars = ['BMW', 'Mercedes', 'Toyota', 'Ford', 'Tesla'];
 
@@ -30,6 +34,34 @@
     str += '</ul>'
 
     document.getElementById('points').innerHTML = str;
+
+    var text = '';
+    for(var i = 0; i < 10; i++){
+        if(i === 3){
+            break; //if continue, would just skip 3
+        }
+        text += 'The number is ' + i + '<br>';
+    }
+    document.getElementById('break').innerHTML = text; //get error for some reason
+
+    //Exceptions
+    try {
+        adddlert('mistake');
+    } catch(err){
+        document.getElementById('error').innerHTML = err.message;
+    }
+
+    //JSON
+    var text = '{"employees":[' +
+    '{"firstName":"John","lastName":"Doe" },' +
+    '{"firstName":"Anna","lastName":"Smith" },' +
+    '{"firstName":"Peter","lastName":"Jones" }]}';
+
+    //converts string into JS object
+    obj = JSON.parse(text);
+    document.getElementById("json").innerHTML =
+    obj.employees[1].firstName + " " + obj.employees[1].lastName;
+
 </script>
 
 </body>

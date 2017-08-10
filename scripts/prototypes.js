@@ -78,6 +78,10 @@ Slipper.prototype = {
     takeOff: function(){alert('smelly, take it off');}
 };
 
+Slipper.prototype.clean = function() {
+    alert('Cleaning slippers');
+}
+
 //new instantiates the class
 var adidasSlipper = new Slipper(10, 'green', 'male', 'slippy');
 
@@ -85,6 +89,7 @@ console.log(adidasSlipper);
 //adidasSlipper.takeOff();
 
 adidasSlipper.putOn();
+adidasSlipper.clean();
 
 
 //OVERRIDE PROTOTYPAL METHODS
